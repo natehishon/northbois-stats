@@ -36,9 +36,16 @@ db.sequelize.sync()
 // });
 
 // simple route
-app.get("/", (req, res) => {
-  const yo = Tutorial.findAll()
-  return res.json({ message: "yo" });
+app.get("/", async (req, res) => {
+  const yo = await Tutorial.create({
+    title: 'yo',
+    description: 'yo',
+    published: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  })
+  // const yo = Tutorial.findAll()
+  return res.json({ yo });
 });
 
 // set port, listen for requests
