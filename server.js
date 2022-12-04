@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require('dotenv').config()
 
+
+
 const app = express();
 
 
@@ -18,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+const Tutorial = db.tutorials;
 
 db.sequelize.sync()
   .then(() => {
@@ -34,8 +37,8 @@ db.sequelize.sync()
 
 // simple route
 app.get("/", (req, res) => {
-  const yo = tu
-  res.json({ message: "yo" });
+  const yo = Tutorial.findAll()
+  return res.json({ message: "yo" });
 });
 
 // set port, listen for requests
