@@ -1,8 +1,9 @@
 module.exports = {
-  HOST: process.env.DB_HOST,
-  USER: process.env.DB_USER,
-  PASSWORD: process.env.DB_PASSWORD,
-  DB: process.env.DB_NAME,
+  host: process.env.DB_HOST, // This was changed
+  port: 3306,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   dialect: "mysql",
   pool: {
     max: 5,
