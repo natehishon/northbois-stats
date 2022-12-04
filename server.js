@@ -44,7 +44,6 @@ app.get("/", async (req, res) => {
     createdAt: new Date(),
     updatedAt: new Date()
   })
-  //update
   // const yo = Tutorial.findAll()
   return res.json({ yo });
 });
