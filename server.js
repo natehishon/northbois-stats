@@ -38,7 +38,7 @@ db.sequelize.sync()
 // });
 
 app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
+  res.sendFile(path + "public/index.html");
 });
 
 // simple route
