@@ -8,7 +8,7 @@ const app = express();
 const path = __dirname + '/app/vue-js-client/';
 
 const serveStatic = require("serve-static")
-app.use(serveStatic(path.join(__dirname, 'dist')));
+app.use(express.static(path));
 const port = process.env.PORT || 3000;
 app.listen(port);
 
