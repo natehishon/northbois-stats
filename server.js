@@ -6,7 +6,9 @@ require('dotenv').config()
 
 const app = express();
 
-app.use(express.static(__dirname+ '/app/vue-js-client/dist'));
+const path = __dirname+ '/app/vue-js-client/dist'
+
+app.use(express.static(path));
 
 
 var corsOptions = {
@@ -37,9 +39,7 @@ db.sequelize.sync()
 //   console.log("Drop and re-sync db.");
 // });
 
-app.get('/', function (req,res) {
-  res.sendFile(path + "dist/index.html");
-});
+
 
 // simple route
 app.get("/data", async (req, res) => {
@@ -55,6 +55,10 @@ app.get("/data", async (req, res) => {
 
   // const yo = Tutorial.findAll()
   return res.json({ yo });
+});
+
+app.get('/', function (req,res) {
+  res.sendFile(path + "index.html");
 });
 
 // set port, listen for requests
