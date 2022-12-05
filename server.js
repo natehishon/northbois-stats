@@ -5,7 +5,7 @@ require('dotenv').config()
 
 
 const app = express();
-const path = __dirname + '/app/vue-js-client/';
+const path = __dirname + '/vue-js-client/';
 
 app.use(express.static(path));
 
