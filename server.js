@@ -7,12 +7,7 @@ require('dotenv').config()
 const app = express();
 const path = __dirname + '/app/vue-js-client/';
 
-const serveStatic = require("serve-static")
 app.use(express.static(path));
-const port = process.env.PORT || 3000;
-app.listen(port);
-
-
 
 var corsOptions = {
   origin: process.env.CLIENT_URL
