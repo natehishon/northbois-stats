@@ -28,6 +28,9 @@ export default {
     }
   },
   mounted() {
+
+    console.log(process.env.VUE_APP_BACKEND_URL)
+
     axios({
       method: 'get',
       url: process.env.VUE_APP_BACKEND_URL + `/data`,
