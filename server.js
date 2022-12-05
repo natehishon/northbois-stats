@@ -5,9 +5,8 @@ require('dotenv').config()
 
 
 const app = express();
-// const path = __dirname + '/app/vue-js-client/';
 
-app.use(express.static(path.join(__dirname,"app/vue-js-client/dist")));
+app.use(express.static(__dirname+ '/app/vue-js-client/dist'));
 
 
 var corsOptions = {
