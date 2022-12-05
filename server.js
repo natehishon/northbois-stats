@@ -5,6 +5,13 @@ require('dotenv').config()
 
 
 const app = express();
+const path = __dirname + '/app/vue-js-client/';
+
+const serveStatic = require("serve-static")
+app.use(serveStatic(path.join(__dirname, 'dist')));
+const port = process.env.PORT || 3000;
+app.listen(port);
+
 
 
 var corsOptions = {
@@ -35,15 +42,22 @@ db.sequelize.sync()
 //   console.log("Drop and re-sync db.");
 // });
 
+app.get('/', function (req,res) {
+  res.sendFile(path + "index.html");
+});
+
 // simple route
-app.get("/", async (req, res) => {
-  const yo = await Tutorial.create({
-    title: 'yo',
-    description: 'yo',
-    published: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  })
+app.get("/data", async (req, res) => {
+  // const yo = await Tutorial.create({
+  //   title: 'yo',
+  //   description: 'yo',
+  //   published: true,
+  //   createdAt: new Date(),
+  //   updatedAt: new Date()
+  // })
+
+  const yo = await Tutorial.findAll()
+
   // const yo = Tutorial.findAll()
   return res.json({ yo });
 });
