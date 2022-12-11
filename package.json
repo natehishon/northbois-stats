@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "cd vue-js-client && npm run serve",
     "build": "cd vue-js-client && npm run build",
-    "start": "node app.js"
+    "start": "node app.js && cd vue-js-client && npm install"
   },
   "author": "",
   "license": "ISC",
