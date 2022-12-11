@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-js-client/vue-cli-service serve",
+    "build": "vue-js-client/vue-cli-service build",
     "start": "node app.js"
   },
   "author": "",
