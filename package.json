@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js && npm install --prefix ./vue-js-client && npm run build --prefix ./vue-js-client"
+    "start": "node server.js",
+    "postinstall": "cd vue-js-client && npm run start"
   },
   "author": "",
   "license": "ISC",
