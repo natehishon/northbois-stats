@@ -29,11 +29,13 @@ export default {
   },
   mounted() {
 
-    console.log(process.env.VUE_APP_BACKEND_URL)
+    const url = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8080'
+        : 'https://northbois-backend.herokuapp.com'
 
     axios({
       method: 'get',
-      url: process.env.VUE_APP_BACKEND_URL + `/data`,
+      url: url + `/data`,
     })
         .then((response) =>  {
           console.log(response)
